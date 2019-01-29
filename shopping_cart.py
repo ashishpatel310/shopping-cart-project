@@ -22,5 +22,24 @@ products = [
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
 # TODO: write some Python code here to produce the desired functionality...
-print(products)
+#print(products)
+
+# an infinite loop! you can press control+c to cancel the program if/when it gets stuck...
+#while True:
+    # capturing user input and storing in a variable
+    #user_input = input("Please input a product identifier, or 'DONE' if there are no more items: ")
+    # demonstrating ability to recognize what the input was, although you might also want to check its datatype
+    #print("YOUR INPUT WAS: " + user_input)
+
+
+
+print("-----------------------------------------")
+print("Ashish's Grocery Store")
+print("-----------------------------------------")
+print("Web: www.AshishGotTheGoods.com")
+print("Phone: 1.240.780.1455")
+import datetime
+now = datetime.datetime.now()
+print("Checkout Time:  " + str(now))
+print("-----------------------------------------")
 
