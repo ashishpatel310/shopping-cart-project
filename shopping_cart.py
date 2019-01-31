@@ -26,10 +26,24 @@ products = [
 
 # an infinite loop! you can press control+c to cancel the program if/when it gets stuck...
 #while True:
-    # capturing user input and storing in a variable
-    #user_input = input("Please input a product identifier, or 'DONE' if there are no more items: ")
-    # demonstrating ability to recognize what the input was, although you might also want to check its datatype
-    #print("YOUR INPUT WAS: " + user_input)
+#    x = input("Please scan an item, or 'DONE' if there are no more items: ")
+#    print(x)
+
+x = 1
+
+running_total = 0
+
+while x < 5:
+    selected_id = 1 #input("Please Scan an Item")
+    matching_products = [p for p in products if p["id"] == selected_id]
+    product = matching_products[0]
+    price = product["price"]   #4.95 (lookup actual price)
+    running_total = running_total + price
+    x = x + 1
+
+print("THE TOTAL PRICE IS: " + str(running_total))
+
+
 
 
 
@@ -40,6 +54,5 @@ print("Web: www.AshishGotTheGoods.com")
 print("Phone: 1.240.780.1455")
 import datetime
 now = datetime.datetime.now()
-print("Checkout Time:  " + str(now))
+print("Checkout Time: " + str(now))
 print("-----------------------------------------")
-
