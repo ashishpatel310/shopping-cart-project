@@ -62,16 +62,18 @@ for s in selected_ids:
     running_total = running_total + matching_p["price"]
 
 
-total_tax = running_total * .18
+total_tax = running_total * .0575
 total = total_tax + running_total
 
-
-
-print("----------------------------------------")
-print("Pre-Tax Total: " + str(running_total))
-print("Sales Tax: " + str(total_tax))
-print("Total: " + str(total))
+running_total_usd = "${0:.2f}".format(running_total) 
+total_tax_usd = "${0:.2f}".format(total_tax)
+total_price_usd = "${0:.2f}".format(total)
 
 print("----------------------------------------")
-print("Thanks! Come again soon!")
+print("Pre-Tax Total: " + str(running_total_usd))
+print("Sales Tax (5.75%): " + str(total_tax_usd))
+print("Total: " + str(total_price_usd))
+
+print("----------------------------------------")
+print("Thanks for your business! Please come again soon!")
 
