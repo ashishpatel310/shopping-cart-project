@@ -75,27 +75,3 @@ print("Total: " + str(total))
 print("----------------------------------------")
 print("Thanks! Come again soon!")
 
-
-
-#a = [int(x) for x in input().split()]
-#print(a)
-#item_count = len(a)
-#print(len(a))
-#
-#x = 0
-#
-#running_total = 0
-#
-#while x < item_count:
-#    selected_id = 1 #input("Please Scan an Item")
-#    matching_products = [p for p in products if p["id"] == selected_id]
-#    product = matching_products[0]
-#    price = product["price"]  
-#    running_total = running_total + price
-#    x = x + 1
-#
-#print("THE TOTAL PRICE IS: " + str(running_total))
-#
-#
-#
-
