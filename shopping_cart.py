@@ -51,7 +51,7 @@ print("Checkout Time: " + str(now))
 print("-----------------------------------------")
 
 
-Total_Cost = 0
+running_total = 0
 
 
 for s in selected_ids:
@@ -59,13 +59,18 @@ for s in selected_ids:
     matching_p = matching_products[0]
     price_usd = "${0:.2f}".format(matching_p["price"])
     print(" + " + matching_p["name"] + " (" + str(price_usd) + ")")
+    running_total = running_total + matching_p["price"]
+
+
+total_tax = running_total * .18
+total = total_tax + running_total
 
 
 
 print("----------------------------------------")
-print("Pre-Tax Total: ")
-print("Sales Tax: ")
-print("Total: ")
+print("Pre-Tax Total: " + str(running_total))
+print("Sales Tax: " + str(total_tax))
+print("Total: " + str(total))
 
 print("----------------------------------------")
 print("Thanks! Come again soon!")
