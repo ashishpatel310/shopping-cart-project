@@ -25,27 +25,20 @@ products = [
 #print(products)
 
 # an infinite loop! you can press control+c to cancel the program if/when it gets stuck...
-#while True:
-#    x = input("Please scan an item, or 'DONE' if there are no more items: ")
-#    print(x)
 
-x = 1
-
-running_total = 0
-
-while x < 5:
-    selected_id = 1 #input("Please Scan an Item")
-    matching_products = [p for p in products if p["id"] == selected_id]
-    product = matching_products[0]
-    price = product["price"]   #4.95 (lookup actual price)
-    running_total = running_total + price
-    x = x + 1
-
-print("THE TOTAL PRICE IS: " + str(running_total))
+selected_ids = []
 
 
+while True:
+    x = input("Please scan an item, or 'Select done' if there are no more items: ")
+    selected_ids.append(x)
+    print(x)
+    if x == "done":
+        break
 
+print(selected_ids)
 
+del selected_ids[-1]
 
 print("-----------------------------------------")
 print("Ashish's Grocery Store")
@@ -56,3 +49,48 @@ import datetime
 now = datetime.datetime.now()
 print("Checkout Time: " + str(now))
 print("-----------------------------------------")
+
+
+Total_Cost = 0
+
+
+for s in selected_ids:
+    matching_products = [p for p in products if str(p["id"]) == s]
+    matching_p = matching_products[0]
+    price_usd = "${0:.2f}".format(matching_p["price"])
+    print(" + " + matching_p["name"] + " (" + str(price_usd) + ")")
+
+
+
+print("----------------------------------------")
+print("Pre-Tax Total: ")
+print("Sales Tax: ")
+print("Total: ")
+
+print("----------------------------------------")
+print("Thanks! Come again soon!")
+
+
+
+#a = [int(x) for x in input().split()]
+#print(a)
+#item_count = len(a)
+#print(len(a))
+#
+#x = 0
+#
+#running_total = 0
+#
+#while x < item_count:
+#    selected_id = 1 #input("Please Scan an Item")
+#    matching_products = [p for p in products if p["id"] == selected_id]
+#    product = matching_products[0]
+#    price = product["price"]  
+#    running_total = running_total + price
+#    x = x + 1
+#
+#print("THE TOTAL PRICE IS: " + str(running_total))
+#
+#
+#
+
